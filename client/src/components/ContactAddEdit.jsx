@@ -2,9 +2,9 @@ import React from 'react';
 import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MdPerson, MdPhone, MdEmail } from 'react-icons/md';
-import { ContactsContext } from '../context/ContactsContext';
+import { ContactsContext } from '../apiContext/ContactsContext';
 
-const ContactAddEdit = ({ contact }) => {
+const ContactAddEdit = ({ contact, index }) => {
 
     const navigate = useNavigate();
     const { addContact, editContact } = useContext(ContactsContext);
@@ -18,7 +18,7 @@ const ContactAddEdit = ({ contact }) => {
         e.preventDefault();
         const newContact = { name, phone, email };
         if (editMode && contact) {
-            editContact(contact.id, newContact);
+            editContact(index, newContact);
         } else {
             addContact(newContact);
         }
@@ -38,7 +38,7 @@ const ContactAddEdit = ({ contact }) => {
                         id="name"
                         onChange={(e) => setName(e.target.value)}
                         value={name}
-                        class="bg-gray-50 border border-gray-400 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-4"
+                        className="bg-gray-50 border border-gray-400 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-4"
                         placeholder="Name of contact"
                         required
                     />
@@ -50,7 +50,7 @@ const ContactAddEdit = ({ contact }) => {
                         id="phone"
                         onChange={(e) => setPhone(e.target.value)}
                         value={phone} 
-                        class="bg-gray-50 border border-gray-400 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-4"
+                        className="bg-gray-50 border border-gray-400 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-4"
                         placeholder="Phone number of contact"
                         required
                     />
@@ -62,14 +62,14 @@ const ContactAddEdit = ({ contact }) => {
                         id="email"
                         onChange={(e) => setEmail(e.target.value)}
                         value={email}
-                        class="bg-gray-50 border border-gray-400 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-4"
+                        className="bg-gray-50 border border-gray-400 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-4"
                         placeholder="Email address of contact" />
                 </div>
                 <div className="flex gap-4">
                     <div className="flex justify-end items-end">
                         <button
                             type="submit"
-                            class="text-white bg-teal-700 hover:bg-teal-800 rounded-lg p-4">
+                            className="text-white bg-teal-700 hover:bg-teal-800 rounded-lg p-4">
                             {editMode ? 'Save Changes' : 'Save Contact'}
                         </button>
                     </div>

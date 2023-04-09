@@ -1,11 +1,15 @@
-import React, { useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 
-import { ContactsContext } from '../context/ContactsContext';
+import { ContactsContext } from '../apiContext/ContactsContext';
 import ContactList from '../components/ContactList';
 import Searchbar from '../components/Searchbar';
 
 const ListingPage = () => {
-  const { contacts, deleteContact } = useContext(ContactsContext);
+  const { getContacts, contacts, deleteContact } = useContext(ContactsContext);
+
+  useEffect(() => {
+    getContacts();
+  }, [contacts]); 
 
   return (
     <>
@@ -18,7 +22,7 @@ const ListingPage = () => {
                 Name
               </th>
               <th className="w-1/2 text-left font-normal py-3">
-                Phone Number
+                Phone number
               </th>
             </tr>
           </thead>
