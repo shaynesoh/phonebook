@@ -3,9 +3,9 @@ from flask_cors import CORS
 from pymongo import MongoClient
 from bson import json_util, ObjectId
 import json
-import config
+import os
 
-mongo_uri = config.MONGO_URI
+mongo_uri = os.environ.get('MONGO_URI')
 app = Flask(__name__)
 CORS(app)
 

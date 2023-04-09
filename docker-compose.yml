@@ -16,7 +16,7 @@ services:
       context: ./server
       dockerfile: Dockerfile
     environment:
-      DATABASE_URI: mongodb://mongo:27017/phonebook
+      MONGO_URI: mongodb://mongo:27017/phonebook
     ports:
       - '5000:5000'
     depends_on:
