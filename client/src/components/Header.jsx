@@ -12,7 +12,7 @@ const Header = () => {
                     to={"/"}
                     className="flex items-center flex-shrink-0 text-white"
                 >
-                    <span className="font-semibold text-xl tracking-tight">PhoneBook.</span>
+                    <span className="font-semibold text-xl tracking-tight">PhoneBook</span>
                 </Link>
                 <div className="flex items-center flex-shrink-0 text-white">
                     <button

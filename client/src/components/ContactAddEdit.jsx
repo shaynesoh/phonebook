@@ -79,5 +79,4 @@ const ContactAddEdit = ({ contact, index }) => {
     )
 }
 
-
 export default ContactAddEdit;

@@ -15,12 +15,18 @@ const ContactList = ({ contacts, handleDeleteContact }) => {
                     </td>
                     <td className="py-3">{contact && contact.phone}</td>
                     <span className="flex items-center">
-                        <button navigate="/edit" className="p-2">
+                        <button
+                            navigate="/edit"
+                            className="p-2"
+                        >
                             <Link to={`/contact/${index}/edit`} className="flex items-center">
                                 <MdEdit className="text-gray-400 hover:text-black" size={25} />
                             </Link>
                         </button>
-                        <button className="p-2" onClick={() => handleDeleteContact(index)}>
+                        <button
+                            className="p-2"
+                            onClick={() => handleDeleteContact(index)}
+                        >
                             <MdDelete className="text-gray-400 hover:text-black" size={25} />
                         </button>
                     </span>

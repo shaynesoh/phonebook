@@ -9,7 +9,7 @@ const ListingPage = () => {
 
   useEffect(() => {
     getContacts();
-  }, [contacts]); 
+  }, [contacts]);
 
   return (
     <>
@@ -27,7 +27,10 @@ const ListingPage = () => {
             </tr>
           </thead>
           <tbody>
-            <ContactList contacts={contacts} handleDeleteContact={deleteContact} />
+            <ContactList
+              contacts={contacts}
+              handleDeleteContact={deleteContact}
+            />
           </tbody>
         </table>
       </div>
